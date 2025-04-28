@@ -42,5 +42,5 @@ func main() {
 	http.HandleFunc("/chat", chatHandler)
 
 	fmt.Println("Server started at http://localhost:8086")
-	log.Fatal(http.ListenAndServe(":8086", nil))
+	log.Fatal(http.ListenAndServe("127.0.0.1:8086", nil))
 }
