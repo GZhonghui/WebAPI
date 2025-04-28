@@ -19,6 +19,9 @@ type MessageResponse struct {
 
 // Handle /chat
 func chatHandler(w http.ResponseWriter, r *http.Request) {
+	// https://your-frontend-site.com
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
 	if r.Method != http.MethodPost {
 		http.Error(w, "Only POST method is allowed", http.StatusMethodNotAllowed)
 		return
