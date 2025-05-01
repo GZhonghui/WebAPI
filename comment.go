@@ -69,7 +69,7 @@ func commentSentHandler(w http.ResponseWriter, r *http.Request) {
 	newComment := CommentEntry{
 		Name:    req.Name,
 		Message: req.Message,
-		IP:      r.RemoteAddr,
+		IP:      getRealIP(r),
 		Time:    uint64(time.Now().Unix()),
 	}
 
